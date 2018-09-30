@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="col-lg-6">
+
+  </div>
+  <div class="col-lg-6">
+    <ul>
+      <li>
+       <a routerLink="/home/" routerLinkActive="active">Home</a>
+      </li>
+      <li>
+        <a routerLink="/test/" routerLinkActive="active">Test</a>
+       </li>
+       <li>
+        <a routerLink="/login/" routerLinkActive="active" *ngIf="!isLoggedIn">Login</a>
+       </li>
+       <li>
+        <a routerLink="./" *ngIf="isLoggedIn" (click) = 'logout()'>Logout</a>
+       </li>
+    </ul>
+  </div>
+</div>

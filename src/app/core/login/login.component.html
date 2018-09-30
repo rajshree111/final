@@ -1,0 +1,30 @@
+
+<div class="container-fluid option-tab-container">
+ <div class="option-tab-wrapper">
+      <div (click)="loginPage()" class="login-tab option-tab" [ngClass]="(pagetoshow)?'selected-tab':''">Login</div>
+      <div (click)="signupPage()"  class="signup-tab option-tab" [ngClass]="(pagetoshow)?'':'selected-tab'">Signup</div>
+ </div>
+
+  <div class="login-page" *ngIf="pagetoshow">
+    <input type="text" [(ngModel)]="email" placeholder="email">
+    <input type="password" [(ngModel)]="password" placeholder="password">
+
+    <button (click)="login()" >
+      Login
+    </button>
+  </div>
+
+
+  </div>
+
+<div class="signup-page" *ngIf="!pagetoshow">
+  <input type="text" [(ngModel)]="email" placeholder="email">
+  <input type="password" [(ngModel)]="password" placeholder="password">
+  <input type="password" [(ngModel)]="repeatpassword" placeholder="repeat-password">
+
+  <input type="text" [(ngModel)]="name" placeholder="name">
+
+  <button (click)="signup()" [disabled]="!email || !password">
+  signup
+  </button>
+</div>
